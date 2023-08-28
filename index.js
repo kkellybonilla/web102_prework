@@ -181,6 +181,7 @@ descriptionContainer.appendChild(displayUnfundedParagraph);
 
 const firstGameContainer = document.getElementById("first-game");
 const secondGameContainer = document.getElementById("second-game");
+const lastGameContainer = document.getElementById("last-game");
 
 const sortedGames =  GAMES_JSON.sort( (item1, item2) => {
     return item2.pledged - item1.pledged;
@@ -198,3 +199,7 @@ firstGameContainer.appendChild(topPledgeGame);
 const runnerUpGame = document.createElement('p');
 runnerUpGame.textContent = secondGame.name;
 secondGameContainer.appendChild(runnerUpGame);
+
+const lastGame = document.createElement('p');
+lastGame.textContent = remainingGames[remainingGames.length - 1].name;
+lastGameContainer.appendChild(lastGame);
