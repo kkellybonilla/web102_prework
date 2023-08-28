@@ -34,7 +34,7 @@ GIF created with LICEcap.
 
 ## Notes
 
-Entering this prework assignment with knowledge of HTML, CSS, & basic JavaScript, my biggest challenge was learning how to use the `reduce` and `filter` functions. As a result, I utilized online resources to understand the parameters these functions take in, as well as how they operate. In the end, it was super fun to see them in action, and I'm happy I learned something new!
+Entering this prework assignment with knowledge of HTML, CSS, & basic JavaScript, my biggest challenge was learning how to use the `reduce` and `filter` JavaScript functions. As a result, I utilized online resources to understand the parameters these functions take in, as well as how they operate. In the end, it was super fun to see them in action, and I'm happy I learned something new!
 
 ## License
 
