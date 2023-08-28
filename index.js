@@ -5,6 +5,7 @@
 */
 
 // import the JSON data about the crowd funded games from the games.js file
+import games from './games.js';
 import GAMES_DATA from './games.js';
 
 // create a list of objects to store the data about the games using JSON.parse
@@ -29,26 +30,35 @@ const gamesContainer = document.getElementById("games-container");
 function addGamesToPage(games) {
 
     // loop over each item in the data
-
+    games.forEach(game => {
 
         // create a new div element, which will become the game card
-
+        const gameCard = document.createElement('div');
 
         // add the class game-card to the list
-
+        gameCard.classList.add('game-card');
 
         // set the inner HTML using a template literal to display some info 
         // about each game
         // TIP: if your images are not displaying, make sure there is space
         // between the end of the src attribute and the end of the tag ("/>")
-
+        gameCard.innerHTML = `
+            <img class="game-img" src="${game.img}" alt="${game.name}" />
+            <h3>${game.name}</h3>
+            <p>${game.description}</p>
+            <span>Backers: ${game.backers} <br/> 
+                  Pledged: $${game.pledged} / Goal: $${game.goal}</span>
+        `;
 
         // append the game to the games-container
+        gamesContainer.appendChild(gameCard)
+    });
 
 }
 
 // call the function we just defined using the correct variable
 // later, we'll call this function using a different list of games
+addGamesToPage(GAMES_JSON)
 
 
 /*************************************************************************************
@@ -61,10 +71,11 @@ function addGamesToPage(games) {
 const contributionsCard = document.getElementById("num-contributions");
 
 // use reduce() to count the number of total contributions by summing the backers
-
+// const totalContributions 
 
 // set the inner HTML using a template literal and toLocaleString to get a number with commas
-
+const formattedTotalContributions = totalContributions.toLocaleString();
+contributionsCard.innerHTML = `$${formattedTotalContributions}`;
 
 // grab the amount raised card, then use reduce() to find the total amount raised
 const raisedCard = document.getElementById("total-raised");
